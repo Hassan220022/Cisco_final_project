@@ -1,4 +1,4 @@
-# Socket Programming Examples
+# Socket Programming Bonus Task
 
 This repository contains examples of socket programming using Python. It includes implementations for both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) connections, with separate folders for each protocol.
 
