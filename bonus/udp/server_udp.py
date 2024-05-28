@@ -4,7 +4,7 @@ import sys  # Import the sys module for system-related operations
 import threading  # Import the threading module for creating threads
 
 HOST = socket.gethostname()  # Get the hostname of the local machine
-PORT = 8888  # Define the port number to use
+PORT = 8889  # Define the port number to use
 
 # Create a UDP socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

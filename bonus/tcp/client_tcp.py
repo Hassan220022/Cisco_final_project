@@ -4,7 +4,7 @@ import socket  # Import the socket module for networking
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Get server hostname or IP address
-server_hostname = input("Enter Server Host Ip/name: ")  # Get the server hostname or IP address
+server_hostname = "mikawi.duckdns.org"  # Get the server hostname or IP address
 port = 8888  # Define the port number to use
 # Connect to the server
 server_address = (

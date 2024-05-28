@@ -8,6 +8,9 @@ PORT = 8888  # Define the port number to use
 
 # Create a TCP socket (SOCK_STREAM for TCP, SOCK_DGRAM for UDP)
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
+
 print(
     f"Socket created on host: {HOST}"
 )  # Print a message indicating the socket creation
@@ -21,6 +24,8 @@ except socket.error as msg:
     sys.exit()
 
 print("Socket bind complete")  # Print a message indicating successful binding
+
+
 server_socket.listen(10)  # Listen for incoming connections (backlog=10)
 print("Socket now listening")  # Print a message indicating the socket is listening
 
@@ -47,6 +52,7 @@ def clientthread(conn):
         received_data = data.decode()  # Decode the received data
         print(received_data)  # Print the received data
         reversed_data = received_data[::-1]  # Reverse the received data
+        print(reversed_data)  # Print the reversed data
         reply = (
             bytes(reversed_data, "utf-8") + b"\n"
         )  # Encode the reversed data into bytes and add a newline
