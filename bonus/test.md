@@ -24,7 +24,7 @@
 
 ```bash
 Server:
-└─$ python .\server_tcp.py
+$ python .\server_tcp.py
 Socket created on host: 192.168.1.28
 Socket bind complete
 IP address:  O-Laptop.local
