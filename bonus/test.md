@@ -1,15 +1,8 @@
 # Test Cases and Execution Traces
 
-Test Cases:
+## Test Cases
 
-1. TCP Connection:
-   - Run the TCP server and client on the same machine.
-   - Enter a string to reverse on the client.
-   - Verify that the reversed string is received and displayed correctly.
-   - Enter 'exit' to quit the client.
-   - Verify that the client and server terminate gracefully.
-
-2. TCP Connection with Remote Host:
+1. TCP Connection with Remote Host:
    - Run the TCP server on a remote host (or a different machine on the same network).
    - Run the TCP client and enter the remote host's IP address or hostname.
    - Enter a string to reverse on the client.
@@ -17,15 +10,7 @@ Test Cases:
    - Enter 'exit' to quit the client.
    - Verify that the client and server terminate gracefully.
 
-3. UDP Connection:
-   - Run the UDP server and client on the same machine.
-   - Enter the server's host IP/name on the client.
-   - Enter a string to reverse on the client.
-   - Verify that the reversed string is received and displayed correctly.
-   - Enter 'exit' to quit the client.
-   - Verify that the client and server terminate gracefully.
-
-4. UDP Connection with Remote Host:
+2. UDP Connection with Remote Host:
    - Run the UDP server on a remote host (or a different machine on the same network).
    - Run the UDP client and enter the remote host's IP address or hostname.
    - Enter a string to reverse on the client.
@@ -33,13 +18,74 @@ Test Cases:
    - Enter 'exit' to quit the client.
    - Verify that the client and server terminate gracefully.
 
-5. Invalid Input:
-   - Run the TCP or UDP client.
-   - Enter an invalid string (e.g., containing non-ASCII characters) on the client.
-   - Verify that the program handles the invalid input gracefully without crashing.
+## Execution Traces
 
-Execution Traces:
-[Attach execution traces showing the test cases being run.]
+### Test Case 1: TCP Connection with Remote Host
+
+```bash
+Server:
+└─$ python .\server_tcp.py
+Socket created on host: 192.168.1.28
+Socket bind complete
+IP address:  O-Laptop.local
+Socket now listening
+Connected with 192.168.1.39:59500
+omar
+ramo
+
+Client:
+PS C:\Users\mohab\OneDrive\Desktop> python .\client.py
+Enter Server Host Ip/name: 192.168.1.28
+Connecting to ('192.168.1.28', 8888)...
+Connected to server
+Enter a string to reverse (or "exit" to quit): omar
+Sending: omar
+Received: ramo
+
+Enter a string to reverse (or "exit" to quit):
+```
+
+### Test Case 2: UDP Connection with Remote Host
+
+```bash
+server:
+
+Socket created on host: 192.168.1.80
+Socket bind complete
+Socket now listening
+Waiting to receive messages...
+Received from ('192.168.1.250', 64503): mikawi
+Sent to ('192.168.1.250', 64503): iwakim
+Received from ('192.168.1.250', 64503): bor3i
+Sent to ('192.168.1.250', 64503): i3rob
+Received from ('192.168.1.250', 64503): omar
+Sent to ('192.168.1.250', 64503): ramo
+Received from ('192.168.1.250', 64503): ahmed
+Sent to ('192.168.1.250', 64503): demha
+Received from ('192.168.1.250', 64503): anwar
+Sent to ('192.168.1.250', 64503): rawna
+
+client:
+
+Enter Server Host Ip/name: 192.168.1.80
+Connecting to ('192.168.1.80', 8888)...
+Enter a string to reverse (or "exit" to quit): mikawi
+Sending: mikawi
+Received: iwakim
+Enter a string to reverse (or "exit" to quit): bor3i
+Sending: bor3i
+Received: i3rob
+Enter a string to reverse (or "exit" to quit): omar
+Sending: omar
+Received: ramo
+Enter a string to reverse (or "exit" to quit): ahmed
+Sending: ahmed
+Received: demha
+Enter a string to reverse (or "exit" to quit): anwar
+Sending: anwar
+Received: rawna
+Enter a string to reverse (or "exit" to quit):
+```
 
 Known Issues:
 
